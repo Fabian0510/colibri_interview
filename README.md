@@ -1,6 +1,8 @@
 # colibri_interview
 
 ## Overview
+this is Geoff Jones' code for an interview with Colibri Digital.
+
 This code is written in Python and uses the PySpark environment and libraries. To run, import into a Databricks workspace and use a basic serverless compute.
 
 ## depedencies
