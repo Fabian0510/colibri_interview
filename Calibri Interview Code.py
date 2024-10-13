@@ -14,7 +14,7 @@ holding_df = spark.read.load('/Volumes/landing/landed_files/vol_colibri/data_gro
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col, row_number, rank, avg, sum, min, max, round, stddev,when, count, lit,current_timestamp
+from pyspark.sql.functions import col, row_number, rank, avg, sum, min, max, round, stddev,when, count, lit, current_timestamp, expr, date_format, hour
 from pyspark.sql import Window
 landing_df = holding_df.withColumn("file_name", col("_metadata.file_path"))
 
@@ -67,8 +67,6 @@ for file_name, turbine_ids in file_turbine_mapping.items():
 # MAGIC ## Check that there is a record for every tubrine for every hour in every day
 
 # COMMAND ----------
-
-from pyspark.sql.functions import expr, col, date_format, hour
 
 hours_df = spark.range(24).selectExpr("id as hour")
 
